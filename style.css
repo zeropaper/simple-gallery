@@ -16,10 +16,21 @@ body {
 }
 
 h1,
+#pager,
+#author-link {
+  position: absolute;
+}
+
+h1,
+#pager li,
+#author-link {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+h1,
 #pager {
   margin: 0;
   padding: 0;
-  position: absolute;
   width: 80%;
   left: 10%;
   text-align: center;
@@ -47,5 +58,10 @@ h1 {
   border: 1px solid currentColor;
   margin-right: 3px;
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#author-link {
+  display: inline-block;
+  bottom: 3px;
+  right: 3px;
 }

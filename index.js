@@ -4,7 +4,7 @@ $(document).ready(function () {
   $.getJSON('data.json', function(array) {
     // we create a jQuery h1 element for the title
     var $h1 = $('<h1>Welcome</h1>');
-    var $link = $('<a id="author-link"></a>');
+    var $link = $('<a target="_blank" id="author-link"></a>');
 
     // we create a jQuery list element for the page
     var $ul = $('<ul id="pager"></ul>');
@@ -19,7 +19,7 @@ $(document).ready(function () {
         $h1.text(item.title);
         $body.css('background-image', 'url('+item.src+')');
         $link
-          .text(item.author)
+          .text('Photos by ' + item.author)
           .attr('href', item.link)
       });
 

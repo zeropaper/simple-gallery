@@ -27,6 +27,10 @@ $(document).ready(function () {
 
       // that we add to the list ($ul)
       $ul.append($li);
+
+      // if this is the first item,
+      // we simulate a "click" on it to show the first image
+      if (index === 0) $li.trigger('click');
     });
 
     $('body').append($h1, $ul, $link)

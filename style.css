@@ -99,6 +99,11 @@ h1 {
   left: 0;
 }
 
+.first-image .big-button.back,
+.last-image .big-button.next {
+  display: none;
+}
+
 .big-button.next {
   text-align: right;
   right: 0;

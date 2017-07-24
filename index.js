@@ -21,6 +21,17 @@ $(document).ready(function () {
         $link
           .text('Photos by ' + item.author)
           .attr('href', item.link);
+
+        if (index === 0) {
+          $('body').addClass('first-image');
+        }
+        else if (index === array.length - 1) {
+          $('body').addClass('last-image');
+        }
+        else {
+          $('body').removeClass('first-image last-image');
+        }
+
         $('#pager li').removeClass('active');
         $(this).addClass('active');
       });
@@ -30,11 +41,32 @@ $(document).ready(function () {
 
       // if this is the first item,
       // we simulate a "click" on it to show the first image
-      if (index === 0) $li.trigger('click');
+      if (index === 0) {
+        $li.trigger('click');
+      }
     });
 
 
+
+
+
     var $backButton = $('<div class="big-button back">&laquo;</div>');
+    $backButton.on('click', function() {
+      var $activeLi = $('li.active');
+      $activeLi.prev().trigger('click');
+    });
+
+    var $nextButton = $('<div class="big-button next">&raquo;</div>');
+    $nextButton.on('click', function() {
+      var $activeLi = $('li.active');
+      $activeLi.next().trigger('click');
+    });
+
+
+
+
+    /*
+    var $backButton = $('<div title="go back" class="big-button back">&laquo;</div>');
     $backButton.on('click', function() {
       var listItemText = $('li.active').text();
       var currentIndex = Number(listItemText) - 1;
@@ -48,7 +80,7 @@ $(document).ready(function () {
       $('li').eq(wantedIndex).trigger('click');
     });
 
-    var $nextButton = $('<div class="big-button next">&raquo;</div>');
+    var $nextButton = $('<div title="go next" class="big-button next">&raquo;</div>');
     $nextButton.on('click', function() {
       var listItemText = $('li.active').text();
       var currentIndex = Number(listItemText) - 1;
@@ -60,7 +92,7 @@ $(document).ready(function () {
 
       $('li').eq(wantedIndex).trigger('click');
     });
-
+    */
     $('body').append($h1, $ul, $link, $backButton, $nextButton);
   });
 });

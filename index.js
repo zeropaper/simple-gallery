@@ -33,6 +33,34 @@ $(document).ready(function () {
       if (index === 0) $li.trigger('click');
     });
 
-    $('body').append($h1, $ul, $link)
+
+    var $backButton = $('<div class="big-button back">&laquo;</div>');
+    $backButton.on('click', function() {
+      var listItemText = $('li.active').text();
+      var currentIndex = Number(listItemText) - 1;
+
+      // to go back, we subtract 1 to the current index
+      var wantedIndex = currentIndex - 1;
+      if (wantedIndex === -1) {
+        wantedIndex = array.length - 1;
+      }
+
+      $('li').eq(wantedIndex).trigger('click');
+    });
+
+    var $nextButton = $('<div class="big-button next">&raquo;</div>');
+    $nextButton.on('click', function() {
+      var listItemText = $('li.active').text();
+      var currentIndex = Number(listItemText) - 1;
+
+      var wantedIndex = currentIndex + 1;
+      if (wantedIndex === array.length) {
+        wantedIndex = 0;
+      }
+
+      $('li').eq(wantedIndex).trigger('click');
+    });
+
+    $('body').append($h1, $ul, $link, $backButton, $nextButton);
   });
 });

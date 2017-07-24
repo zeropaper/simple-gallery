@@ -47,6 +47,7 @@ h1,
 
 h1 {
   top: 10%;
+  z-index: 10;
 }
 
 #pager {
@@ -54,6 +55,7 @@ h1 {
   bottom: 10%;
   display: flex;
   justify-content: center;
+  z-index: 10;
 }
 
 #pager li {
@@ -78,4 +80,26 @@ h1 {
   bottom: 3px;
   right: 3px;
   padding: 1px 3px;
+  z-index: 10;
+}
+
+.big-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  font-size: 45px;
+  line-height: calc(100vh - 90px);
+  padding: 45px;
+  z-index: 5;
+}
+
+.big-button.back {
+  left: 0;
+}
+
+.big-button.next {
+  text-align: right;
+  right: 0;
 }

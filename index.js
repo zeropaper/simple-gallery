@@ -20,7 +20,9 @@ $(document).ready(function () {
         $body.css('background-image', 'url('+item.src+')');
         $link
           .text('Photos by ' + item.author)
-          .attr('href', item.link)
+          .attr('href', item.link);
+        $('#pager li').removeClass('active');
+        $(this).addClass('active');
       });
 
       // that we add to the list ($ul)

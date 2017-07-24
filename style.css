@@ -68,6 +68,10 @@ h1 {
   margin-right: 3px;
   border-radius: 3px;
 }
+/* placed here because it "modifies" the usual style of "#pager li" */
+#pager li.active {
+  background-color: rgba(255, 122, 122, 0.5);
+}
 
 #author-link {
   display: inline-block;
